@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, make_response
 import spacy;
-nlp = spacy.load('es_core_news_lg');
+nlp = spacy.load('es_core_news_md');
 
 app = Flask(__name__)
 
