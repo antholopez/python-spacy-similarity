@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_from_root():
+    print("Hello from root acaaaaaaaaaaaaaa")
     doc1 = nlp('Cuales son los tipos de inteligencia artificial')
     doc2 = nlp('que tipos de inteligencia artificial existe')
     doc3 = nlp('que es la inteligencia artificial')
@@ -17,7 +18,7 @@ def hello_from_root():
     print(doc1.similarity(doc3))
     print(doc1.similarity(doc4))
     print(doc1.similarity(doc5))
-    return jsonify(message='Hello from root!')
+    return jsonify(message=doc1.similarity(doc2))
 
 
 @app.route("/hello")
@@ -28,3 +29,6 @@ def hello():
 @app.errorhandler(404)
 def resource_not_found(e):
     return make_response(jsonify(error='Not found!'), 404)
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0')
