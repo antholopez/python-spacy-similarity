@@ -55,6 +55,6 @@ jobs:
             docker pull ${DOCKER_USERNAME}/${DOCKER_REPOSITORY}:latest
             docker stop ${DOCKER_REPOSITORY} || true
             docker rm ${DOCKER_REPOSITORY} || true
-            docker run -p ${PORT}:${PORT} --env-file ./.env.development -d --restart unless-stopped --hostname ${DOCKER_REPOSITORY} --name ${DOCKER_REPOSITORY} ${DOCKER_USERNAME}/${DOCKER_REPOSITORY}:latest
+            docker run -p ${PORT}:${PORT} -d --restart unless-stopped --hostname ${DOCKER_REPOSITORY} --name ${DOCKER_REPOSITORY} ${DOCKER_USERNAME}/${DOCKER_REPOSITORY}:latest
 
           EOF
