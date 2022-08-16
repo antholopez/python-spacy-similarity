@@ -2,7 +2,7 @@ name: Deploymnet Pipeline
 
 on:
   push:
-    branches: [development]
+    branches: [develop]
 
 jobs:
   deploy:
